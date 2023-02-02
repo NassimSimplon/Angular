@@ -14,7 +14,7 @@ export class ServiceService {
    getComments() {
     return this.http.get<any[]>(`${COMMENTS_PATH}`).subscribe({
       next: (val: any) => {
-        this.commentsData = val;
+     return   this.commentsData = val;
       },
       error: (e: any) => console.error('Error:', e),
       complete: () => {
@@ -41,9 +41,11 @@ export class ServiceService {
 
       return this.http.put<any>(`${COMMENTS_PATH}/${item.id}`,{...item}).subscribe({
         next: (val: any) => { 
-          this.getComments();
           console.log(val, 'Update Comment Successfuly');
-          this.commentsData = val;
+          console.log(this.commentsData,'serv')
+        return  this.getComments();
+         
+        
         },
         error: (e: any) => console.error('Error:', e),
         complete: () => {

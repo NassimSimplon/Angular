@@ -1,1 +1,30 @@
-<p>studio works!</p>
+
+<div class="Studio">
+    <h1>Studio</h1>
+</div>
+
+<div class="Studio_table">
+    <div class="Studio_table_Head">
+        <h3>Id</h3>
+        <h3>Title</h3>
+        <h3>Thumbnail</h3>
+        <h3>Visibility</h3>
+        <h3>CreatedAt</h3> 
+        <h3>#</h3> 
+    </div>
+<div  *ngFor="let i of videoData">
+    <div class="Studio_table_Body">
+        <h3>{{i.id}}</h3>
+        <h3>{{i.title}}</h3>
+        <img src="{{i.thumbnail}}">
+        <h3>{{i.visibility}}</h3>
+        <h3>{{i.CreatedAt}}</h3>
+        
+            <div  >
+                <button (click)="deleteOne(i.id)"> D</button>
+                <button  >U</button>
+               </div>
+       
+    </div>
+</div>
+</div>

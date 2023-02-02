@@ -1,0 +1,83 @@
+.Studio{
+    width: 100%;
+    height: fit-content;
+    padding: 1.5rem;
+}
+.Studio h1{
+    width: fit-content;
+    position: relative;
+    padding: 5px;
+    z-index: 1;
+}
+.Studio h1::after{
+    content:"" ;
+    width: 0%;
+    height: 100%;
+    background-color: var(--primary-blue);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all .4s ease-in-out;
+}
+.Studio h1:hover::after{
+    width: 100%;
+}
+.Studio_table{
+    width: 90%;
+    margin: auto;
+}
+.Studio_table .Studio_table_Head{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 10% 20% 23% 17% 1fr 1fr;
+    background-color: var(--primary-blue);
+    padding: 15px 25px;
+    border-radius: 8px;
+    place-items: center;
+
+} 
+.Studio_table .Studio_table_Head h3{
+    width: 100%;
+    padding-left: 10px;
+}
+.Studio_table .Studio_table_Body{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 10% 20% 23% 17% 1fr 1fr;
+    background-color: var(--primary-white);
+    color:  var(--primary-black);
+    padding: 15px 25px;
+    border-radius: 8px;
+    place-items: center;
+    margin-top: 10px;
+
+} 
+.Studio_table .Studio_table_Body h3{
+    width: 100%;
+    padding-left: 10px;
+}
+.Studio_table .Studio_table_Body img{
+    padding: 15px;
+}
+.Studio_table .Studio_table_Body div{
+    display: flex;
+    gap: 15px;
+}
+.Studio_table .Studio_table_Body div button{
+    background-color: var(--primary-blue);
+    color: var(--primary-white) !important;
+    font-weight: 900;
+    font-size: 17px;
+    border-radius: 50%;
+    padding: 5px 9px;
+    transition: all .2s ease-in-out;
+ 
+}
+.Studio_table .Studio_table_Body div button:hover{
+    transform: scale(1.2);
+}
+.Studio_table .Studio_table_Body div button::before{
+   background-color: transparent;
+   
+}

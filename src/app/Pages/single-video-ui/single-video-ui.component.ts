@@ -26,7 +26,7 @@ export class SingleVideoUIComponent implements OnInit {
   }
 
   showComments(){
-    this.comments = this.commentService.commentsData.filter(
+   return this.comments = this.commentService.commentsData.filter(
       (x: any) => x.vID == this.id
     );
     
@@ -55,15 +55,18 @@ export class SingleVideoUIComponent implements OnInit {
     this.toggleInput = true;
    }
   }
+  newOne :any;
   //Form 
   updateTheComment(f:NgForm,i:any){
     
-    this.commentService.updateComment({
+   this.newOne= this.commentService.updateComment({
       id:i.id,
       body:f?.value?.body,  
       CreatedAt:i.CreatedAt,
       vID: i.vID  
-    })
+    }) ;
+ 
+    console.log(this.commentService.commentsData,'debugger')
  return this.toggleInput = false;
  
    }
