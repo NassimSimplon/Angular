@@ -1,0 +1,61 @@
+<br><br>
+
+
+
+<div  *ngIf=" videoData.length !== 0">
+
+  <div class="single_video_ui">
+      <div>
+        <div>
+          <img src="{{ videoData[0].thumbnail }}" loading="lazy" width="20" height="20" alt="" />
+        </div>
+        <div>
+          <span>{{ videoData[0].title }}</span>
+          <em>{{ videoData[0].CreatedAt }}</em>
+        </div>
+        <button (click)="deleteOne()">
+          <img src="../../../assets/delete.svg" loading="lazy" width="20" height="20" alt="" />
+        </button>
+      </div>
+    </div>
+    <div *ngFor="let i of comments">
+    <!-------------------- Comment Section --------------------->
+    <br><br>
+    <div class="comments_section" *ngIf="comments.length > 0">
+      <div class="row_1">
+        <div>
+          <span> <img src="../../../assets/anonym.svg" loading="lazy" width="20" height="20" alt="" /></span>
+          <h3>Anonymous</h3>
+        </div>
+        <div>
+     
+        </div>
+      </div>
+      <div class="row_2">
+        <h3  *ngIf="!toggleInput">{{ i?.body }}</h3>
+        <form #f="ngForm"  *ngIf="toggleInput" >
+          <input type="text" name="body" placeholder="Comment"  #body ngModel value="{{ i?.body }}">
+          <div *ngIf="toggleInput">
+            <button (click)="updateTheComment(f,i)" type="button" > <img  src="../../../assets/don.svg" loading="lazy" width="20" height="20" alt="" /></button>
+            <button (click)="isOpen()" type="button"> Cancel</button>
+           </div>
+  
+        </form>
+        <div *ngIf="!toggleInput">
+         <button (click)="deleteOneComment(i?.id)"> <img src="../../../assets/delete.svg" loading="lazy" width="20" height="20" alt="" /></button>
+         <button (click)="isOpen()"> <img src="../../../assets/edit.svg" loading="lazy" width="20" height="20" alt="" /></button>
+        </div>
+   
+      </div>
+    </div>
+  </div>
+  
+
+</div>
+    <!-------------------- Empty Section Modal --------------------->
+    <div class="delete_message" *ngIf="videoData.length === 0">
+      <img src="../../../assets/info.svg" loading="lazy" width="20" height="20" alt="" />
+      <p>This Video Has Been Deleted You Can Go To The Home Page</p>
+    </div>
+    <div>
+    </div>

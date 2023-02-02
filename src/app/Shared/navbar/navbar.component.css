@@ -1,0 +1,13 @@
+.NavBar{
+    width: 100%;
+    height: fit-content;
+    padding:.4rem 2rem;
+    border-bottom: 1px solid var(--primary-blue);
+}
+.NavBar , .NavBar ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}

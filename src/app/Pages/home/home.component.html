@@ -1,0 +1,12 @@
+
+<div class="CardFormatSection" *ngFor="let i of videoArray" >
+<div (click)="switchSingleUIvideo(i.id)">
+    <div>
+     <img src="{{i.thumbnail}}" alt="">
+    </div>
+     <div >
+        <span>{{i.title}}</span>
+        <em>{{i.CreatedAt}}</em>
+     </div>
+</div>
+</div>
